@@ -7,8 +7,7 @@ import Home from './Routes/Home'
 import Detail from "./Routes/Detail";
 import Contact from "./Routes/Contact"
 import Favs from "./Routes/Favs"
-import {routes} from './Routes'
-import { ContextProvider } from './Components/utils/global.context';
+import { ContextProvider, routes } from './Components/utils/global.context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

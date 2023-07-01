@@ -1,10 +1,29 @@
 import React, { createContext, useContext, useReducer, useEffect, useState } from "react";
-import { apiSwitch } from "../../apiSwitch";
 import axios from "axios";
+
+
 
 export const initialState = {
   dark: false,
 };
+
+export const apiSwitch = (state, action) => {
+  switch (action.type) {
+      case 'dark':
+        return { dark: true };
+      case 'light':
+        return { dark: false };
+      default:
+        return state;
+  }
+}
+
+export const routes = {
+  home: '/',
+  dentist: '/dentist/:id',
+  contact: '/contact',
+  favs: '/favs',
+}
 
 export const ContextGlobal = createContext();
 
