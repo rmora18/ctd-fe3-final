@@ -1,19 +1,30 @@
 import React from "react";
-import Card from "../Components/Card";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Favs = () => {
 
+  const borrarStorage=()=>{
+    localStorage.clear()
+    window.location.reload()
+  }
+
+  const fav=JSON.parse(localStorage.getItem('favs')) 
+
   return (
     <>
-      <h1>Dentists Favs</h1>
-      <div className="card-grid">
-        {/* este componente debe consumir los destacados del localStorage */}
-        {/* Deberan renderizar una Card por cada uno de ellos */}
+      <h1>Dentists favs</h1>
+      <div className="fav" >
+        
+        {fav ? <img src="./images/doctor.jpg" alt=""width={200}height={200} /> : null}
+
+        {fav ? <p>{fav.name} <p>{fav.username}</p></p> : null}
+
+        {fav ? <button className="btn2" onClick={borrarStorage}>Eliminar</button> : null}
+        
       </div>
+      
     </>
-  );
-};
+  )
+}
 
 export default Favs;

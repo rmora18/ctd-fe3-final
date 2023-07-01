@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
 }
 
 code {
@@ -17,28 +18,107 @@ code {
   border: none;
   width: 100%;
   cursor: pointer;
+  color: transparent; 
+  text-shadow: 0 0 0 Magenta;
 }
 
 h1{
   text-align: center;
 }
+.nav_title{
+  font-size: 25px;
+  width: 2vw;
+  gap: 10px;
+  display: flex;
+}
+.p1{
+  color: rgb(34, 32, 32);
+  font-weight: 750;
+}
+.p2{
+  color: DarkCyan;
+  font-weight: 700;
+}
 
 nav{
   display: flex;
   width: 80vw;
-  justify-content: flex-start;
+  justify-content: flex-end;
   padding: 1rem;
+  gap: 15px;
+}
+
+.link {
+  color: black;
+}
+
+.link:hover{
+  color: LightSeaGreen;
+}
+
+.container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: PaleTurquoise;
+}
+.btn{
+  border-radius: 10px;
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 9px;
+  border: none;
+  font-size: 22px;
+}
+.btn:hover{
+  cursor: pointer;
+}
+.btn2{
+  border-radius: 10px;
+  border: none;
+  background-color: pink;
+  padding: 4px;
+}
+.btn2:hover{
+  cursor:pointer;
+  background-color: 	LightCoral;
+}
+.btn3{
+  border-radius: 10px;
+  padding: 4px;
+  border: none;
+  height: 30px;
+  width: 60px;
+  background-color: pink;
+}
+.btn3:hover{
+  cursor: pointer;
+  background-color: 	LightCoral;
 }
 
 a{
-  color: #000;
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
 }
-a:hover{
-  color: rgb(136, 136, 136);
-} 
+
+.adjust{
+  height: 70vh;
+  text-align: center;
+}
+.formulario{
+  margin-top: 60px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  color: pink;
+  background-color: grey;
+  width: 25%;
+  height: auto;
+  padding: 8px; 
+}
 
 footer {
   display: flex;
@@ -50,10 +130,13 @@ footer {
   width: 90%;
   height: 40px;
   margin-top: 2rem;
+  background-color: PaleTurquoise;
+  width: auto;
 }
 
 footer > img{
   width: 200px;
+  /*background-color: blue;*/
   margin: 0;
 }
 footer > p{
@@ -94,6 +177,23 @@ form{
   margin: 0 auto;
 }
 
+.linkDentist{
+  color: black;
+}
+
+.linkDentist:hover {
+  color: LightSeaGreen;
+}
+
+.fav{
+  gap: 1rem;
+  width: 90vw;
+  height: auto;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  text-align: center;
+  height: 60vh;
+}
 table {
  border-collapse: collapse;
     border-spacing: 0;
@@ -110,7 +210,7 @@ td, th {
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #a3a0a0;
 }
 
 .dark{

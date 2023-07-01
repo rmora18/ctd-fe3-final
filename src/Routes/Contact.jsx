@@ -1,16 +1,41 @@
 import React from 'react'
-import Form from '../Components/Form'
+import { useEffect } from 'react'
+import { useState } from 'react'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
-const Contact = () => {
+const Detail = () => {
+
+  const [dentList,setDentList]=useState([]);
+  const URL='https://jsonplaceholder.typicode.com/users/:id';
+  
+  const {id}=useParams()
+
+  useEffect(()=>{
+    axios(`https://jsonplaceholder.typicode.com/users/${id}`)
+    .then(res=>setDentList(res.data))
+  },[])
+ 
   return (
-    <div>
-      <h2>Want to know more?</h2>
-      <p>Send us your questions and we will contact you</p>
-      <Form/>
-    </div>
+    <>
+      <h1>Detail Dentist {id} </h1>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Website</th>
+        </tr>
+        <tr>
+          <td>{dentList.name}</td>
+          <td>{dentList.email}</td>
+          <td>{dentList.phone}</td>
+          <td>{dentList.website}</td>
+        </tr>
+      </table>
+    </>
   )
 }
 
-export default Contact
+export default Detail

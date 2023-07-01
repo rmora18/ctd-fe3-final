@@ -1,10 +1,13 @@
 import React from 'react'
+import { useGlobalStates } from './utils/global.context'
 
 const Footer = () => {
+  const {state,dispatch}=useGlobalStates()
   return (
-    <footer>
+    <footer style={{backgroundColor:state.dark && '#566573'}}>
         <p>Powered by</p>
-        <img src="./img/DH.png" alt='DH-logo' />
+        <img src="./images/DH.png" alt='DH-logo' />
+        
     </footer>
   )
 }

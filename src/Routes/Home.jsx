@@ -1,17 +1,20 @@
-import React from 'react'
-import Card from '../Components/Card'
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import React from 'react';
+import Card from '../Components/Card';
+import { useGlobalStates } from '../Components/utils/global.context';
 
 const Home = () => {
+  const { data } = useGlobalStates();
+
   return (
-    <main className="" >
+    <main>
       <h1>Home</h1>
-      <div className='card-grid'>
-        {/* Aqui deberias renderizar las cards */}
+      <div className="card-grid">
+        {data.map((e) => (
+          <Card key={e.id} name={e.name} id={e.id} username={e.username} />
+        ))}
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
